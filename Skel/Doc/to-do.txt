@@ -1,0 +1,26 @@
+high priority
+=============
+
+- CfgVar moeglichst lokal
+- Bildinformationen (width, height, y) konsolidieren
+- Konsolidierung cout, cerr, clog
+- Konsolidierung Thread/Thrd
+- Vereinheitlichung aktive Threads / Scanlines
+- Timer Canvas
+
+
+low priority
+============
+
+- private / protected in Singleton
+
+
+done
+====
+
+- background color in threads
+- begin and end of image (boi, eoi) and scanline (bol, eol)
+- resolution in config
+- permutation on / off in config
+- Eigene Klasse fuer QStackedImage
+- save image: file name

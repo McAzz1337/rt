@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>10</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Ray Tracing ++</string>
+  </property>
+  <widget class="QWidget" name="Cnt">
+   <layout class="QGridLayout" name="Grid">
+    <property name="leftMargin">
+     <number>2</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>2</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <item row="0" column="0">
+     <widget class="StkWidget" name="Stk" native="true"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="Mnu">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="MnuFile">
+    <property name="title">
+     <string>&amp;File</string>
+    </property>
+    <addaction name="ActFileClear"/>
+    <addaction name="ActFileSave"/>
+    <addaction name="separator"/>
+    <addaction name="ActFileQuit"/>
+   </widget>
+   <widget class="QMenu" name="MnuShow">
+    <property name="title">
+     <string>&amp;Show</string>
+    </property>
+    <addaction name="ActShowCanvas"/>
+    <addaction name="ActShowOutput"/>
+    <addaction name="separator"/>
+    <addaction name="ActShowToggle"/>
+   </widget>
+   <widget class="QMenu" name="menu_Compute">
+    <property name="title">
+     <string>&amp;Compute</string>
+    </property>
+    <addaction name="ActCompImg"/>
+    <addaction name="ActCompParm"/>
+   </widget>
+   <addaction name="MnuFile"/>
+   <addaction name="menu_Compute"/>
+   <addaction name="MnuShow"/>
+  </widget>
+  <widget class="QStatusBar" name="Sts"/>
+  <action name="ActFileQuit">
+   <property name="text">
+    <string>&amp;Quit</string>
+   </property>
+   <property name="shortcut">
+    <string>Esc</string>
+   </property>
+  </action>
+  <action name="ActFileClear">
+   <property name="text">
+    <string>&amp;Clear</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+C</string>
+   </property>
+  </action>
+  <action name="ActFileSave">
+   <property name="text">
+    <string>&amp;Save Image</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="ActShowCanvas">
+   <property name="text">
+    <string>&amp;Graphics</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+G</string>
+   </property>
+  </action>
+  <action name="ActShowOutput">
+   <property name="text">
+    <string>&amp;Text</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+T</string>
+   </property>
+  </action>
+  <action name="ActShowToggle">
+   <property name="text">
+    <string>&amp;Toggle</string>
+   </property>
+   <property name="shortcut">
+    <string>Space</string>
+   </property>
+  </action>
+  <action name="ActCompImg">
+   <property name="text">
+    <string>Compute &amp;Image</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+X</string>
+   </property>
+  </action>
+  <action name="ActCompParm">
+   <property name="text">
+    <string>Set &amp;Parameters</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>StkWidget</class>
+   <extends>QWidget</extends>
+   <header>stk-widget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>ActFileQuit</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
