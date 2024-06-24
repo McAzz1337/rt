@@ -56,6 +56,8 @@ public:
         printf("%s n:\t%f\t%f\t%f\n", name, n.x, n.y, n.z);
     }
 
+     friend std::ostream& operator<<(std::ostream& o, const Triangle& t);
 };
+
 
 #endif // TRIANGLE_H

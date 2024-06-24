@@ -67,6 +67,8 @@ struct Vec3 {
 
 };
 
+std::ostream& operator<<(std::ostream& o, const Vec3& v);
+
 Vec3 operator*(double d, const Vec3 v);
 
 Vec3 abs(const Vec3& v);

@@ -111,6 +111,11 @@ Vec3 operator*(double d, const Vec3 v) {
     return v * d;
 }
 
+std::ostream& operator<<(std::ostream& o, const Vec3& v) {
+
+    o << v.x << "\t" << v.y << "\t" << v.z << std::endl;
+    return o;
+}
 Vec3 abs(const Vec3& v) {
 
     return Vec3(abs(v.x), abs(v.y), abs(v.z));

@@ -12,6 +12,8 @@ Model::Model(const Vec3& pos, const std::string& path): Object(pos, Material::ma
     Mat4 m;
     m.translate(pos);
 
+    std::cout << "pos: " << pos << std::endl;
+
     for (Triangle& t : triangles) {
 
         t.translate(m);
@@ -32,6 +34,7 @@ bool Model::hit(const Ray& ray, PoI& poi) {
 
         if (triangle.hit(ray, poi)) {
 
+            std::cout << triangle << std::endl;
             hit_anything = true;
         }
     }

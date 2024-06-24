@@ -67,3 +67,9 @@ Vec3 Triangle::getNormal() const {
 
     return normal;
 }
+
+std::ostream& operator<<(std::ostream& o, const Triangle& t) {
+
+    o << t.a << "\t" << t.b << "\t" << t.c;
+    return o;
+}
