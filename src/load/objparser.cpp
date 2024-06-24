@@ -16,22 +16,27 @@ bool loadOBJ(const std::string& path, std::vector<Triangle>& triangles) {
 
     std::string line;
     while (getline(file, line)) {
+
         std::istringstream ss(line);
         std::string prefix;
         ss >> prefix;
         if (prefix == "v") {
+
             Vec3 vertex;
             ss >> vertex.x >> vertex.y >> vertex.z;
             vertices.push_back(vertex);
         } else if (prefix == "f") {
+
             std::vector<unsigned int> faceVertexIndices;
             std::string faceIndicesStr;
             while (ss >> faceIndicesStr) {
+
                 std::istringstream faceStream(faceIndicesStr);
                 unsigned int vertexIndex;
                 char delimiter;
                 faceStream >> vertexIndex;
                 if (faceStream.fail()) {
+
                     std::cerr << "Invalid face definition: " << faceIndicesStr << std::endl;
                     continue;
                 }
@@ -53,9 +58,10 @@ bool loadOBJ(const std::string& path, std::vector<Triangle>& triangles) {
             unsigned int idx3 = face[2];
 
             if (idx1 < vertices.size() && idx2 < vertices.size() && idx3 < vertices.size()) {
-                // Ensure vertices are in the correct order (clockwise or counterclockwise)
+
                 triangles.emplace_back(vertices[idx1], vertices[idx2], vertices[idx3]);
             } else {
+
                 std::cerr << "Invalid vertex index detected in face definition." << std::endl;
                 std::cerr << "Indices: " << idx1 << " " << idx2 << " " << idx3 << std::endl;
                 std::cerr << "Vertices size: " << vertices.size() << std::endl;
